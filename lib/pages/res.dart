@@ -82,7 +82,8 @@ class _ResState extends State<Res> {
                               fontSize: 28,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 2.0)),
-                      Text("INTERPERATION",
+                      Text(args.split(",")[2],
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                               color: Colors.pinkAccent[400],
                               fontSize: 28,

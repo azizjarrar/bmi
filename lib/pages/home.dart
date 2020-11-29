@@ -430,6 +430,7 @@ class _HomeState extends State<Home> {
                                 weight.toDouble(); /*weight of user */
                             double height = heightValue; /*height of user  */
                             String bmi = ""; /* user bmi State  */
+                            String interpretation = ""; /**/
                             /*************test if there is empty blayes ****************/
                             if ((ageLocal.toString().isNotEmpty && age > 0) &&
                                 (weight.toString().isNotEmpty && weight > 0) &&
@@ -439,16 +440,22 @@ class _HomeState extends State<Home> {
                                   result.round(); /* get result with out , */
                               if (result >= 25.0 && result < 29.9) {
                                 bmi = "Overweight";
+                                interpretation =
+                                    "Eat Healthy And Maintain Weight";
                               } else if (result >= 18.5 && result < 25.0) {
-                                bmi = "Healty";
+                                bmi = "Healthy";
+                                interpretation = "Keep Going";
                               } else if (result >= 29.9) {
                                 bmi = "Obese";
+                                interpretation = "Start working Out";
                               } else {
                                 bmi = "Underweight";
+                                interpretation = "Increase  Your Calorie";
                               }
                               /*navigate to result page  */
                               Navigator.pushNamed(context, "/result",
-                                  arguments: ("$bmi,$resultInt").toString());
+                                  arguments: ("$bmi,$resultInt,$interpretation")
+                                      .toString());
                             } else {
                               /* if there is blasa fer8a show msg to user  */
                               Fluttertoast.showToast(
